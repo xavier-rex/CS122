@@ -7,6 +7,7 @@ public class LinkedListNode
     {
 
     }
+
     LinkedListNode(int value, LinkedListNode next)
     {
         this.value = value;
@@ -21,5 +22,18 @@ public class LinkedListNode
     public LinkedListNode getNext()
     {
         return next;
+    }
+
+    public LinkedListNode insert(LinkedListNode head, int value)
+    {
+        LinkedListNode n = head;
+        LinkedListNode node = new LinkedListNode(value, null);
+
+        while (n.next != null)
+        {
+            n = n.next;
+        }
+        n.next = node;
+        return head;
     }
 }
